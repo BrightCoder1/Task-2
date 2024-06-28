@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 id="logo">Task Manager</h1>
+    <div class="page">
+        <div class="sidbar">
+            <ul>
+                <li><a href="/register">Register User</a></li>
+                <li><a href="/login">Login User</a></li>
+            </ul>
+        </div>
+        <div class="box-task">
+            <h1 id="task-heading">Admin Task</h1>
+            <form id="taskbox" action="/" method="post">
+                <input placeholder="Task" type="text" name="task">
+                <input placeholder="Email" type="email" name="email">
+                <button type="submit">Add Task</button>
+            </form>
+            <% if(employers.length > 0) { %>
+                <div class="tasklist">
+                    <% employers.forEach((employer, index) => { %>
+                        <div class="task-item">
+                            <div class="email">
+                                <h5>Email</h5>
+                                <p><%= employer.email %></p>
+                            </div>
+                            <div class="task-email">
+                                <h5>Task</h5>
+                                <p><%= employer.tasks %></p>
+                            </div>
+                            <!-- <div class="action">
+                                <h5>Action</h5>
+                                <div class="action-button">
+                                    <a class="action-curd" href="" id="green">Update</a>
+                                    <a class="action-curd" href="" id="red">Delete</a>
+                                </div>
+                            </div> -->
+                        </div>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <p>No tasks found.</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

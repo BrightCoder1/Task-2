@@ -1,0 +1,172 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Inter', sans-serif; /* Use Google Font Inter */
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+#logo{
+    margin: 0;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    justify-content: center;
+    font-size: 2.4rem;
+}
+/* Page container */
+.page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar styles */
+.sidbar {
+    flex: 1;
+}
+
+.sidbar ul {
+    list-style-type: none;
+}
+
+.sidbar ul li {
+    margin-bottom: 10px;
+}
+
+.sidbar ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidbar ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Task box styles */
+.box-task {
+    flex: 3;
+    padding-left: 20px;
+}
+
+#task-heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#taskbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskbox input[type="text"],
+#taskbox input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#taskbox button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#taskbox button:hover {
+    background-color: #45a049;
+}
+
+/* Task list styles */
+.tasklist {
+    margin-top: 20px;
+}
+
+.task-item {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.email,
+.task-email,
+.action {
+    margin-bottom: 10px;
+}
+
+.email h5,
+.task-email h5,
+.action h5 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.email p,
+.task-email p {
+    font-size: 14px;
+}
+
+.action-button {
+    display: flex;
+    gap: 10px;
+}
+
+.action-curd {
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-curd#green {
+    background-color: #4caf50;
+    color: white;
+}
+
+.action-curd#red {
+    background-color: #f44336;
+    color: white;
+}
+
+.action-curd:hover {
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .page {
+        flex-direction: column;
+    }
+
+    .sidbar,
+    .box-task {
+        width: 100%;
+    }
+}

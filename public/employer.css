@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+#logo{
+    margin: 0;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    justify-content: center;
+    font-size: 2.4rem;
+}
+#employer-status{
+        /* margin-left: 2rem; */
+        position: absolute;
+        margin-top: 10px;
+        right: 82px;
+}
+
+
+
+/* Default styles */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Add other default styles */
+}
+
+/* Media query for tablets and larger phones */
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .sidbar {
+        /* Example of changing sidebar width */
+        width: 50%;
+    }
+}
+
+/* Media query for smaller phones */
+@media only screen and (max-width: 480px) {
+    /* Adjust styles for very small screens */
+    .sidbar {
+        /* Example of further reducing sidebar width */
+        width: 100%;
+    }
+    /* Example of adjusting font size */
+    #task-heading {
+        font-size: 1.5em;
+    }
+}
+
+
+
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidbar {
+    width: 30%; /* Adjust as needed */
+    float: left;
+    /* Other styles */
+}
+
+.box-task {
+    width: 70%; /* Adjust as needed */
+    float: right;
+    /* Other styles */
+}
+.btn{
+    list-style: none;
+}
+.btn-a{
+    text-decoration: none;
+    border: 2px solid rebeccapurple;
+    background-color: rebeccapurple;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 8px;
+}
+#ul{
+    display: flex;
+    gap: 2rem;
+}

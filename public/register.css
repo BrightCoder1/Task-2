@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+#logo{
+    margin: 0;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    justify-content: center;
+    font-size: 2.4rem;
+}
+.box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+}
+img{
+    width: 23%;
+    -webkit-filter: drop-shadow(5px 5px 5px #000);
+    filter: drop-shadow(5px 5px 5px #666666);
+}
+form{
+    border: 2px solid rgb(77, 6, 98);
+    padding: 3% 5%;
+    border-radius: 8px;
+    box-shadow: 2px 3px 10px rgb(77, 6, 98);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 40vh;
+}
+#register{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(77, 6, 98);
+}
+label{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(77, 6, 98);
+}
+input{
+    outline: none;
+    padding: 2px 4px;
+    border: none;
+    margin-left: 4px;
+    border-bottom: 1px solid rgb(77, 6, 98);
+    color: rgb(77, 6, 98);
+}
+button{
+    padding: 5px 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(77, 6, 98);
+    transition: 0.3s;
+    border:2px solid rgb(77, 6, 98);
+    border-radius: 6px;
+}
+button:hover{
+    background-color: rgb(77, 6, 98);
+    color: #fff;
+}
+a{
+    font-size: 16px;
+    color: rgb(77, 6, 98);
+}

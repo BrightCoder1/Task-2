@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+#logo{
+    margin: 0;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    justify-content: center;
+    font-size: 2.4rem;
+}
+.box{
+    display: flex;
+    
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 90vh;
+}
+.box1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+.box-para{
+    width: 86%;
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+#trackbutton{
+    border: 2px solid rgb(77, 6, 98);
+    padding: 6px 10px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(77, 6, 98);
+    border-radius: 7px;
+    transition: 0.3s;
+}
+#trackbutton:hover{
+    background-color: rgb(77, 6, 98);
+    color: #fff;
+}
+#box1-heading{
+    font-size: 25px;
+    font-weight: 600;
+}
+#box2-img{
+    width: 300px;
+    position: absolute;
+    right: 10%;
+}
