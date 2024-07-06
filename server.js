@@ -5,12 +5,12 @@ const port = process.env.port;
 const connectDB = require("./db/db");
 const Register = require("./db/register.data");
 const path = require("path")
-const staticpath = path.join(__dirname, "./public");
+const staticPath = path.join(__dirname, "./public");
 
 app.set("view engine", "ejs");
 
 app.use(express.json());
-app.use(express.static(staticpath));
+app.use(express.static(staticPath));
 app.use(express.urlencoded({
     extended: false
 }));
@@ -76,7 +76,8 @@ app.post("/login", async (req, res) => {
             } else {
 
                 res.status(201).render("employer", {
-                    tasks: userFind.tasks || []
+                    tasks: userFind.tasks || [],
+                    email: userFind.email
                 });
             }
         } else {
@@ -87,6 +88,7 @@ app.post("/login", async (req, res) => {
     }
 })
 
+// Add task from admin page...
 app.post("/", async (req, res) => {
     try {
         const email = req.body.email;
@@ -97,7 +99,10 @@ app.post("/", async (req, res) => {
             user.tasks.push(task);
             const response = await user.save();
             console.log(response);
-            res.status(201).render("index");
+            const admin = await Register.find({});
+            res.status(201).render("admin", {
+                employers: admin
+            });
         }
         else {
             res.status(404).json({ msg: "User not found." });
@@ -107,6 +112,7 @@ app.post("/", async (req, res) => {
     }
 })
 
+// Edit user 
 
 app.get("/edit/:id", async (req, res) => {
     const { id } = req.params;
@@ -141,11 +147,12 @@ app.get("/delete/:id", async (req, res) => {
     try {
         const { id } = req.params;
         const deleteData = await Register.findByIdAndDelete({ _id: id });
-        res.render("admin",{employers: await Register.find({})});
+        res.render("admin", { employers: await Register.find({}) });
     } catch (error) {
-        res.status(500).json({msg:"Internal server error"});
+        res.status(500).json({ msg: "Internal server error" });
     }
 })
+
 
 connectDB().then(() => {
     app.listen(port, () => {

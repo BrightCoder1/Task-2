@@ -22,16 +22,31 @@
             </ul>
         </div>
         <div class="box-task">
+            <!-- <h1 id="task-heading">Task Report</h1>
+
+            <form id="taskbox" action="/complete" method="POST">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" required>
+                <label for="taskName">Email:</label>
+                <input type="email" id="taskName" name="email" required>
+                <label for="completed">Completed:</label>
+                <input type="checkbox" id="completed" name="completed" value="true">
+                <button type="submit">Add Task</button>
+            </form> -->
+
             <h1 id="task-heading">Employer Task</h1>
+
             <div class="tasklist">
                 <ul id="employer-ul">
-                    <% if (tasks.length > 0) { %>
-                        <% tasks.forEach((task, index) => { %>
-                            <li class="employer-task"><%= task %></li>
-                        <% }); %>
-                    <% } else { %>
-                        <li class="employer-task">No tasks found.</li>
-                    <% } %>
+                    <% if (tasks.length> 0) { %>
+                        <% tasks.forEach((task, index)=> { %>
+                            <li class="employer-task">
+                                <%= task %>
+                            </li>
+                            <% }); %>
+                                <% } else { %>
+                                    <li class="employer-task">No tasks found.</li>
+                                    <% } %>
                 </ul>
             </div>
         </div>

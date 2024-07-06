@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
     },
     tasks:[{
         type:String
+    }],
+    completed:[{
+        type:Boolean,
+        default:false
     }]
 });
 
