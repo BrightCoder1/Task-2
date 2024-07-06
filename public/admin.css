@@ -7,11 +7,13 @@
 
 /* Body styles */
 body {
-    font-family: 'Inter', sans-serif; /* Use Google Font Inter */
+    font-family: 'Inter', sans-serif;
+    /* Use Google Font Inter */
     line-height: 1.6;
     background-color: #f0f0f0;
 }
-#logo{
+
+#logo {
     margin: 0;
     background-color: aliceblue;
     display: flex;
@@ -21,6 +23,7 @@ body {
     justify-content: center;
     font-size: 2.4rem;
 }
+
 /* Page container */
 .page {
     display: flex;
@@ -157,6 +160,33 @@ body {
 
 .action-curd:hover {
     opacity: 0.8;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.action-button {
+    display: flex;
+    gap: 10px;
+}
+
+.action-curd {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#green {
+    background-color: green;
+}
+
+#red {
+    background-color: red;
 }
 
 /* Responsive adjustments */
