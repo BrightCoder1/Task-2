@@ -1,10 +1,12 @@
-body{
+/* CSS for responsive design */
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 }
-#logo{
+
+#logo {
     margin: 0;
     background-color: aliceblue;
     display: flex;
@@ -14,45 +16,57 @@ body{
     justify-content: center;
     font-size: 2.4rem;
 }
-.box{
+
+.box {
     display: flex;
-    
     align-items: center;
     text-align: center;
     width: 100%;
     height: 90vh;
+    flex-direction: column; /* Stack items vertically on small screens */
 }
-.box1{
+
+.box1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 90%; /* Adjust width for better responsiveness */
+    max-width: 800px; /* Limit maximum width for larger screens */
+    margin-bottom: 20px; /* Add spacing between box and image */
 }
-.box-para{
-    width: 86%;
+
+.box-para {
+    width: 100%; /* Full width text */
     letter-spacing: 1px;
     line-height: 24px;
+    margin-bottom: 20px; /* Add spacing between paragraphs */
 }
-#trackbutton{
+
+#trackbutton {
     border: 2px solid rgb(77, 6, 98);
-    padding: 6px 10px;
+    padding: 10px 20px; /* Increase padding for better touch target */
     font-weight: 600;
     text-decoration: none;
     color: rgb(77, 6, 98);
     border-radius: 7px;
     transition: 0.3s;
+    display: inline-block; /* Ensure button stays inline */
 }
-#trackbutton:hover{
+
+#trackbutton:hover {
     background-color: rgb(77, 6, 98);
     color: #fff;
 }
-#box1-heading{
+
+#box1-heading {
     font-size: 25px;
     font-weight: 600;
+    margin-bottom: 10px; /* Add spacing below heading */
 }
-#box2-img{
-    width: 300px;
-    position: absolute;
-    right: 10%;
+
+#box2-img {
+    width: 80%; /* Adjust image width for responsiveness */
+    max-width: 300px; /* Limit maximum image size */
+    margin-top: 20px; /* Add spacing above image */
 }

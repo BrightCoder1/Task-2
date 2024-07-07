@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
     tasks:[{
         type:String
     }],
-    completed:[{
+    response:[{
         type:Boolean,
         default:false
     }]

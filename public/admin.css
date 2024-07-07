@@ -1,106 +1,99 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* admin.css */
 
-/* Body styles */
+/* Global styles */
 body {
     font-family: 'Inter', sans-serif;
-    /* Use Google Font Inter */
     line-height: 1.6;
     background-color: #f0f0f0;
-}
-
-#logo {
     margin: 0;
-    background-color: aliceblue;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    font-weight: 600;
-    justify-content: center;
-    font-size: 2.4rem;
+    padding: 0;
 }
 
-/* Page container */
 .page {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Logo styling */
+#logo {
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Sidebar styles */
-.sidbar {
-    flex: 1;
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 8px;
+    margin: 20px 0px;
+    border-radius: 10px;
 }
 
-.sidbar ul {
+.sidebar ul {
     list-style-type: none;
+    padding: 0;
 }
 
-.sidbar ul li {
+.sidebar ul li {
     margin-bottom: 10px;
 }
 
-.sidbar ul li a {
-    display: block;
-    padding: 10px 20px;
+.sidebar ul li a {
+    color: white;
     text-decoration: none;
-    color: #333;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    display: block;
+    padding: 5px;
 }
 
-.sidbar ul li a:hover {
-    background-color: #f0f0f0;
+.sidebar ul li a:hover {
+    background-color: #555;
 }
 
 /* Task box styles */
 .box-task {
-    flex: 3;
-    padding-left: 20px;
+    background-color: white;
+    padding: 20px;
+    margin-left: 20px;
+    flex: 1;
+    max-width: 800px;
+    /* Adjust max-width as per your design */
+    width: 100%;
 }
 
 #task-heading {
-    margin-bottom: 20px;
-    font-size: 24px;
+    text-align: center;
 }
 
-#taskbox {
+form#taskbox {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-#taskbox input[type="text"],
-#taskbox input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+form#taskbox input[type="text"],
+form#taskbox input[type="email"],
+form#taskbox button {
+    margin: 5px;
+    padding: 6px;
+    width: calc(33.33% - 10px);
+    /* Adjust input width */
 }
 
-#taskbox button {
-    padding: 10px 20px;
-    background-color: #4caf50;
+form#taskbox button {
+    width: 100px;
+    /* Adjust button width */
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-#taskbox button:hover {
+form#taskbox button:hover {
     background-color: #45a049;
 }
 
@@ -110,93 +103,70 @@ body {
 }
 
 .task-item {
-    background-color: #f0f0f0;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.email,
-.task-email,
-.action {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
     margin-bottom: 10px;
 }
 
-.email h5,
-.task-email h5,
-.action h5 {
-    font-size: 16px;
+.task-item h5 {
     margin-bottom: 5px;
 }
 
-.email p,
-.task-email p {
-    font-size: 14px;
+.task-email {
+    margin-top: 10px;
 }
 
 .action-button {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .action-curd {
-    padding: 8px 16px;
     text-decoration: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.action-curd#green {
-    background-color: #4caf50;
-    color: white;
-}
-
-.action-curd#red {
-    background-color: #f44336;
-    color: white;
-}
-
-.action-curd:hover {
-    opacity: 0.8;
-}
-
-.action {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-}
-
-.action-button {
-    display: flex;
-    gap: 10px;
-}
-
-.action-curd {
     padding: 5px 10px;
-    text-decoration: none;
-    color: white;
+    border-radius: 3px;
     cursor: pointer;
 }
 
 #green {
-    background-color: green;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#green:hover {
+    background-color: #45a049;
 }
 
 #red {
-    background-color: red;
+    background-color: #f44336;
+    color: white;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
+#red:hover {
+    background-color: #da190b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
     .page {
-        flex-direction: column;
+        margin: 10px;
     }
 
-    .sidbar,
     .box-task {
+        margin-left: 0;
+    }
+
+    form#taskbox input[type="text"],
+    form#taskbox input[type="email"],
+    form#taskbox button {
         width: 100%;
+        /* Full width on smaller screens */
+    }
+
+    .sidebar {
+        display: none;
+        /* Hide sidebar on smaller screens */
     }
 }

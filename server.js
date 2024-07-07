@@ -74,7 +74,7 @@ app.post("/login", async (req, res) => {
                     employers: adminData
                 });
             } else {
-
+                // res.redirect(`/employer/${userFind._id}`);
                 res.status(201).render("employer", {
                     tasks: userFind.tasks || [],
                     email: userFind.email
@@ -87,6 +87,24 @@ app.post("/login", async (req, res) => {
         console.log(error);
     }
 })
+
+// app.get("/employer/:id",async(req, res) => {
+//     try {
+//         const {id}=req.params;
+//         const userFind = await Register.findById(id);
+//         if(userFind){
+//             res.render("employer",{
+//                 tasks: userFind.tasks || [],
+//                 email:userFind.email
+//             })
+//         }else{
+//             res.status(404).json({msg:"User not found"});
+//         }
+//     } catch (error) {
+//         console.log(error);   
+//         res.status(500).json({ msg: "Internal server error" });     
+//     }
+// })
 
 // Add task from admin page...
 app.post("/", async (req, res) => {
@@ -153,6 +171,38 @@ app.get("/delete/:id", async (req, res) => {
     }
 })
 
+app.post("/response", async (req, res) => {
+    try {
+        const email = req.body.email;
+        // console.log(email);
+        const complete = req.body.completed === 'true';
+        // console.log(complete);
+
+        const employerExist = await Register.findOne({ email: email });
+        // console.log(employerExist.response)
+        const tasktrue = employerExist.response;
+        if (tasktrue == complete) {
+            res.status(201).json({ msg: "You hava alredy send response." })
+        } else {
+            if (employerExist) {
+                employerExist.response.push(complete);
+                const response = await employerExist.save();
+                // res.render("login");
+                console.log(response);
+                // res.redirect(`/employer/${userFind._id}`)
+                res.redirect("/");
+            }
+            else {
+                res.status(202).render({ msg: "Invalid Details" });
+            }
+        }
+
+        // console.log(employerExist);
+
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 connectDB().then(() => {
     app.listen(port, () => {

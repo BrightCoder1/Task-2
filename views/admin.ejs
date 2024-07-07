@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
     <link rel="stylesheet" href="/admin.css">
+    <link rel="shortcut icon" href="./image/Taskmanager.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
 <body>
     <h1 id="logo">Task Manager</h1>
     <div class="page">
-        <div class="sidbar">
+        <div class="sidebar">
             <ul>
                 <li><a href="/register">Register User</a></li>
                 <li><a href="/login">Login User</a></li>
@@ -35,7 +36,7 @@
                             </div>
                             <div class="task-email">
                                 <h5>Task</h5>
-                                <p><%= employer.tasks %></p>
+                                <p><%= employer.tasks.join(", ") %></p>
                             </div>
                             <div class="action">
                                 <h5>Action</h5>
@@ -43,6 +44,10 @@
                                     <a class="action-curd" href="/edit/<%= employer._id %>" id="green">Update</a>
                                     <a class="action-curd" href="/delete/<%= employer._id %>" id="red">Delete</a>
                                 </div>
+                            </div>
+                            <div class="task-email">
+                                <h5>Response</h5>
+                                <p><%= employer.response.join(", ") %></p>
                             </div>
                         </div>
                     <% }); %>

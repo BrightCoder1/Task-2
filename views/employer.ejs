@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
     <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="/path/to/your/css/file.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="./image/Taskmanager.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="employer.css">
@@ -22,22 +25,22 @@
             </ul>
         </div>
         <div class="box-task">
-            <!-- <h1 id="task-heading">Task Report</h1>
+            <h1 id="task-heading">Task Report</h1>
 
-            <form id="taskbox" action="/complete" method="POST">
-                <label for="taskName">Task Name:</label>
-                <input type="text" id="taskName" name="taskName" required>
+            <form id="taskbox" action="/response" method="POST">
+                <!-- <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" required> -->
                 <label for="taskName">Email:</label>
                 <input type="email" id="taskName" name="email" required>
                 <label for="completed">Completed:</label>
                 <input type="checkbox" id="completed" name="completed" value="true">
                 <button type="submit">Add Task</button>
-            </form> -->
+            </form>
 
             <h1 id="task-heading">Employer Task</h1>
 
             <div class="tasklist">
-                <ul id="employer-ul">
+                <ol id="employer-ul">
                     <% if (tasks.length> 0) { %>
                         <% tasks.forEach((task, index)=> { %>
                             <li class="employer-task">
